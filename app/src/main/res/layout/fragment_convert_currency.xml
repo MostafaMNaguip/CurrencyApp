@@ -1,11 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent=".4"
+        android:orientation="horizontal"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent=".5"
+        android:orientation="vertical"
+        />
+
+    <TextView
+        android:id="@+id/_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/currencies_spinner_from"
+        app:layout_constraintStart_toStartOf="@id/currencies_spinner_from"
+        app:layout_constraintEnd_toEndOf="@id/currencies_spinner_from"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="@string/from"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/currencies_spinner_to"
+        app:layout_constraintStart_toStartOf="@id/currencies_spinner_to"
+        app:layout_constraintEnd_toEndOf="@id/currencies_spinner_to"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="@string/to"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/black"
+        />
+
+    <Spinner
+        android:id="@+id/currencies_spinner_from"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/bg_spinner_sky"
+        android:drawablePadding="@dimen/_5sdp"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:paddingVertical="@dimen/_4sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toTopOf="@id/guideline_h"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_v"
+        tools:listitem="@layout/item_spinner_color" />
+
+    <Spinner
+        android:id="@+id/currencies_spinner_to"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/bg_spinner_sky"
+        android:drawablePadding="@dimen/_5sdp"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:paddingVertical="@dimen/_4sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toTopOf="@id/guideline_h"
+        app:layout_constraintStart_toStartOf="@id/guideline_v"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_spinner_color" />
 
 
+    <EditText
+        android:id="@+id/et_amount"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginHorizontal="@dimen/_80sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/bg_corner_sky"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:paddingVertical="@dimen/_4sdp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray_medium"
+        android:inputType="number"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintTop_toBottomOf="@id/currencies_spinner_from"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="1.0"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/et_amount"
+        app:layout_constraintTop_toTopOf="@id/et_amount"
+        app:layout_constraintBottom_toBottomOf="@id/et_amount"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="@string/amount"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/proceed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/et_amount"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="@string/proceed"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/bg_corner_green"
+        android:paddingVertical="@dimen/_10sdp"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:elevation="@dimen/_3sdp"
+        />
+
+    <TextView
+        android:id="@+id/convert_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/proceed"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="1.0"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/black"
+        android:background="@drawable/bg_corner_sky"
+        android:paddingVertical="@dimen/_10sdp"
+        android:paddingHorizontal="@dimen/_20sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_marginHorizontal="@dimen/_70sdp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

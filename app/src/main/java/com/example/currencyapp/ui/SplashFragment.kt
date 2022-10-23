@@ -10,6 +10,10 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.currencyapp.R
 import com.example.currencyapp.databinding.FragmentSplashBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class SplashFragment : Fragment() {
 
@@ -32,6 +36,12 @@ class SplashFragment : Fragment() {
 
         mContext = binding.root.context
         navController = Navigation.findNavController(binding.root)
+
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(2000)
+
+                navController.navigate(R.id.convertCurrencyFragment)
+        }
 
     }
 

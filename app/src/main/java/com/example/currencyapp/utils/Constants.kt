@@ -2,10 +2,17 @@ package com.example.currencyapp.utils
 
 import android.Manifest
 
-object Consts{
+object Constants{
 
-    const val access_key = "826f113d8d0123dd62dc7b6e177d9f13"
-    const val BASE_URL = "http://data.fixer.io/api/latest/"
+    const val access_key = "sQHAYkjWy6WPiIzMVesYynrMC9ehZfYM"
+    const val BASE_URL = "https://api.apilayer.com/fixer/"
+
+    object Codes {
+        const val EXCEPTIONS_CODE = 3421
+        const val UNKNOWN_CODE = 5000
+
+    }
+
 
 
 
