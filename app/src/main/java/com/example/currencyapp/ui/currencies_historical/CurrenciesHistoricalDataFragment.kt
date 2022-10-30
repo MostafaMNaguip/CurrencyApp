@@ -10,13 +10,14 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.currencyapp.R
 import com.example.currencyapp.databinding.FragmentCurrenciesHistoricalDataBinding
+import com.example.currencyapp.ui.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
 
-class CurrenciesHistoricalDataFragment : Fragment() {
+@AndroidEntryPoint
+class CurrenciesHistoricalDataFragment : BaseFragment() {
 
     private lateinit var binding: FragmentCurrenciesHistoricalDataBinding
-    private lateinit var mContext: Context
-    private lateinit var navController: NavController
 
 
     override fun onCreateView(
@@ -34,8 +35,7 @@ class CurrenciesHistoricalDataFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mContext = binding.root.context
-        navController = Navigation.findNavController(binding.root)
+
 
     }
 

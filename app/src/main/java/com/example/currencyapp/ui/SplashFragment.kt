@@ -10,16 +10,17 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.currencyapp.R
 import com.example.currencyapp.databinding.FragmentSplashBinding
+import com.example.currencyapp.ui.base.BaseFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class SplashFragment : Fragment() {
+class SplashFragment : BaseFragment() {
 
     private lateinit var binding: FragmentSplashBinding
-    private lateinit var mContext: Context
-    private lateinit var navController: NavController
+//    private lateinit var mContext: Context
+//    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,8 +35,8 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mContext = binding.root.context
-        navController = Navigation.findNavController(binding.root)
+//        mContext = binding.root.context
+//        navController = Navigation.findNavController(binding.root)
 
         CoroutineScope(Dispatchers.Main).launch {
             delay(2000)

@@ -23,7 +23,13 @@ interface ApiEndPoints {
         @Query("amount") amount: String
     ):Response<ConvertCurrencyResponse>
 
-
+    @GET("{date}")
+    suspend fun getHistoricalDetails(
+        @Header("apiKey") apiKey: String,
+        @Path("date") date: String,
+        @Query("base") base: String,
+        @Query("symbols") symbols: String
+    ):Response<ConvertCurrencyResponse>
 
 
 }
